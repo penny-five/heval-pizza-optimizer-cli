@@ -16,7 +16,7 @@ export class HevalListedPizza implements HevalPizza {
     this.toppings = toppings;
   }
 
-  getListName() {
+  getDisplayName() {
     return `${this.number}. ${this.name}`;
   }
 

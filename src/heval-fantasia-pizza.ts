@@ -4,7 +4,7 @@ import { HevalPizza } from './heval-pizza';
 import { HevalTopping } from './heval-topping';
 
 export class HevalFantasiaPizza implements HevalPizza {
-  getListName(): string {
+  getDisplayName(): string {
     return 'Fantasia (4 täytettä)';
   }
 

@@ -20,7 +20,7 @@ const createOptimizerResultConsoleOutput = (results: OptimizerResult[]) => {
   for (const result of results) {
     output += '\n';
 
-    output += chalk.bold(result.getPizza().getListName());
+    output += chalk.bold(result.getPizza().getDisplayName());
 
     output += '\n';
 

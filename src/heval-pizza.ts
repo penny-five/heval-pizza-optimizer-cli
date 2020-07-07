@@ -4,7 +4,7 @@ import { HevalTopping } from './heval-topping';
 export type HevalPizzaSize = string;
 
 export interface HevalPizza {
-  getListName(): string;
+  getDisplayName(): string;
 
   getToppings(): HevalTopping[];
 
