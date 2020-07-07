@@ -1,0 +1,57 @@
+{
+  "name": "heval-pizza-optimizer-cli",
+  "version": "1.0.0",
+  "description": "CLI utility for optimizing your pizza order at Heval restaurant in Hervanta, Tampere",
+  "main": "src/cli.ts",
+  "author": "penny-five",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=13"
+  },
+  "dependencies": {
+    "@types/inquirer": "6.5.0",
+    "@types/lodash": "4.14.155",
+    "@types/node": "13.13.12",
+    "chalk": "4.1.0",
+    "fuzzy": "0.1.3",
+    "inquirer": "7.2.0",
+    "inquirer-checkbox-plus-prompt": "1.0.1",
+    "lodash": "4.17.15",
+    "scrape-it": "5.2.3",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "3.3.0",
+    "@typescript-eslint/parser": "3.3.0",
+    "eslint": "7.3.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "start": "ts-node src/index.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint",
+      "prettier --write"
+    ]
+  }
+}
