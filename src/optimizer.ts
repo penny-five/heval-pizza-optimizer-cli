@@ -103,8 +103,12 @@ export class Optimizer {
     for (const category of this.dataset.getCategories()) {
       for (const pizza of category.getAllPizzas()) {
         const includedToppings = pizza.getToppingsIntersection(criteria.toppings);
-        const missingToppings = _.difference(criteria.toppings, includedToppings);
-        const additionalToppings = _.difference(pizza.getToppings(), includedToppings);
+        const missingToppings = _.differenceBy(criteria.toppings, includedToppings, topping =>
+          topping.getName()
+        );
+        const additionalToppings = _.differenceBy(pizza.getToppings(), includedToppings, topping =>
+          topping.getName()
+        );
 
         const basePrice = category.findPrice(criteria.size);
 

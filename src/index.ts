@@ -31,7 +31,7 @@ const createOptimizerResultConsoleOutput = (results: OptimizerResult[]) => {
         .join(', ');
 
     if (result.hasIncludedToppings()) {
-      output += chalk.green(`+ ${formatToppingList(result.getIncludedToppings())}`);
+      output += chalk.green(`• ${formatToppingList(result.getIncludedToppings())}`);
     }
 
     if (result.hasAdditionalToppings()) {
@@ -41,7 +41,7 @@ const createOptimizerResultConsoleOutput = (results: OptimizerResult[]) => {
     output += '\n';
 
     if (result.hasMissingToppings()) {
-      output += chalk.red(`- ${formatToppingList(result.getMissingToppings())}`);
+      output += chalk.red(`+ ${formatToppingList(result.getMissingToppings())}`);
       output += '\n';
     }
 
@@ -66,7 +66,7 @@ const createOptimizerResultConsoleOutput = (results: OptimizerResult[]) => {
 };
 
 const exec = async () => {
-  console.log(chalk.underline('H E V A L   O P T I M I Z E R\n'));
+  console.log(chalk.bold(chalk.underline('H E V A L   O P T I M I Z E R\n')));
 
   const scraper = new Scraper();
 
